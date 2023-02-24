@@ -1,0 +1,113 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Your profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<h3>@ViewData["Title"]</h3>
+<partial name="_StatusMessage" for="StatusMessage" />
+<div class="row">
+    <div class="col-md-6">
+        <!--13. add the 'enctype="multipart/form-data' attr to pass the profile picture"-->
+        <form id="profile-form" method="post" enctype="multipart/form-data">
+            <h5>Your username:</h5>
+            <div asp-validation-summary="ModelOnly" class="text-danger" />
+            <div class="form-group">
+                <label asp-for="Username" class="form-label" />
+                <input asp-for="Username" class="form-control" disabled />
+            </div>
+            <br />
+
+            <!--13-->
+            <h5>Change your first name:</h5>
+            <div asp-validation-summary="ModelOnly" class="text-danger" />
+            @if (Model.Input.FirstName != null)
+            {
+            <div class="form-group"> 
+                <label asp-for="Input.FirstName" />
+                <input asp-for="Input.FirstName" class="form-control" disabled/>
+            </div>
+            }
+            <div class="form-group"> 
+                <label asp-for="Input.FirstName" />
+                <input asp-for="Input.FirstName" class="form-control" autocomplete="on"/>
+                <span asp-validation-for="Input.FirstName" class="text-danger" />
+            </div>
+            <br />
+
+            <!--13-->
+            <h5>Change your last name:</h5>
+            <div asp-validation-summary="ModelOnly" class="text-danger" />
+            @if (Model.Input.LastName != null)
+            {
+            <div class="form-group"> 
+                <label asp-for="Input.LastName" />
+                <input asp-for="Input.LastName" class="form-control" disabled/>
+            </div>  
+            }
+            <div class="form-group"> 
+                <label asp-for="Input.LastName" />
+                <input asp-for="Input.LastName" class="form-control" autocomplete="on"/>
+                <span asp-validation-for="Input.LastName" class="text-danger" />
+            </div>
+            <br />
+
+            <!--13. add a phone number-->
+            <h5>Change your phone number:</h5>
+            <div asp-validation-summary="ModelOnly" class="text-danger" />
+            @if (Model.Input.PhoneNumber != null)
+            {
+                        <div class="form-group">
+                            <label asp-for="Input.PhoneNumber" class="form-label" />
+                            <input asp-for="Input.PhoneNumber" class="form-control" disabled/>
+                        </div>
+
+            }
+            <div class="form-group">
+                        <label asp-for="Input.PhoneNumber" />
+                        <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="off"/>
+                        <span asp-validation-for="Input.PhoneNumber" class="text-danger" />
+            </div>
+            <br />
+
+            <!--13. add a profile picture-->
+            <h5>Change your profile picture:</h5>
+            <div class="form-group"> 
+                <label asp-for="Input.ProfilePicture" style="width: 100%;" /> 
+                @if (Model.Input.ProfilePicture != null)
+                {
+                            <img 
+                        id="profilePicture" 
+                        style="width:350px;height:350px; object-fit:cover" 
+                        src="data:image/*;base64,@(Convert.ToBase64String(Model.Input.ProfilePicture))"
+                    >
+                }
+                else
+                {
+                            <img 
+                        id="profilePicture" 
+                        style="width:350px;height:350px; object-fit:cover" 
+                        src=""
+                    >
+                }
+                <br/>
+                <input 
+                    type="file" 
+                    accept=".png,.jpg,.jpeg,.gif,.tif" 
+                    asp-for="Input.ProfilePicture" 
+                    class="form-control"
+                    style="border:0px!important;padding: 0px;padding-top: 10px;padding-bottom: 30px;" 
+                    onchange="document.getElementById('profilePicture').src = window.URL.createObjectURL(this.files[0])" />
+                <span asp-validation-for="Input.ProfilePicture" class="text-danger" />
+            </div>
+            <br />
+            <!---->
+            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+                        <partial name="_ValidationScriptsPartial" />
+}
