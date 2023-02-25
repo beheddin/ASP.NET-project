@@ -1,0 +1,17 @@
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\bin\Debug\net6.0\MyProject.DAL.deps.json
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\bin\Debug\net6.0\MyProject.DAL.runtimeconfig.json
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\bin\Debug\net6.0\MyProject.DAL.dll
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\bin\Debug\net6.0\MyProject.DAL.pdb
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\bin\Debug\net6.0\MyProject.BL.dll
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\bin\Debug\net6.0\MyProject.BL.pdb
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\MyProject.DAL.csproj.AssemblyReference.cache
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\MyProject.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\MyProject.DAL.AssemblyInfoInputs.cache
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\MyProject.DAL.AssemblyInfo.cs
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\MyProject.DAL.csproj.CoreCompileInputs.cache
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\MyProject.DAL.csproj.CopyComplete
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\MyProject.DAL.dll
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\refint\MyProject.DAL.dll
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\MyProject.DAL.pdb
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\MyProject.DAL.genruntimeconfig.cache
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.DAL\obj\Debug\net6.0\ref\MyProject.DAL.dll
