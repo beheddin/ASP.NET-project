@@ -12,14 +12,13 @@ using MyProject.DAL;
 namespace MyProject.DAL.Migrations
 {
     [DbContext(typeof(MyProjectDbContext))]
-    [Migration("20230224090722_migr_1")]
+    [Migration("20230225102927_migr_1")]
     partial class migr_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("Identity")
                 .HasAnnotation("ProductVersion", "6.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
@@ -49,7 +48,7 @@ namespace MyProject.DAL.Migrations
                         .HasDatabaseName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.ToTable("Role", "Identity");
+                    b.ToTable("Role", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -74,7 +73,7 @@ namespace MyProject.DAL.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("RoleClaims", "Identity");
+                    b.ToTable("RoleClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
@@ -126,7 +125,7 @@ namespace MyProject.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User", "Identity");
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -151,7 +150,7 @@ namespace MyProject.DAL.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserClaims", "Identity");
+                    b.ToTable("UserClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
@@ -173,7 +172,7 @@ namespace MyProject.DAL.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserLogins", "Identity");
+                    b.ToTable("UserLogins", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
@@ -188,7 +187,7 @@ namespace MyProject.DAL.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("UserRoles", "Identity");
+                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -207,7 +206,7 @@ namespace MyProject.DAL.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("UserTokens", "Identity");
+                    b.ToTable("UserTokens", (string)null);
                 });
 
             modelBuilder.Entity("MyProject.BL.Entities.Blog", b =>
@@ -219,7 +218,6 @@ namespace MyProject.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BlogId"), 1L, 1);
 
                     b.Property<string>("Author")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("PublishedDateTime")
@@ -229,12 +227,9 @@ namespace MyProject.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Url")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("BlogId");
 
-                    b.ToTable("Blog", "Identity");
+                    b.ToTable("Blog");
                 });
 
             modelBuilder.Entity("MyProject.BL.Entities.Comment", b =>
@@ -262,7 +257,7 @@ namespace MyProject.DAL.Migrations
 
                     b.HasIndex("PostId");
 
-                    b.ToTable("Comment", "Identity");
+                    b.ToTable("Comment");
                 });
 
             modelBuilder.Entity("MyProject.BL.Entities.Post", b =>
@@ -274,13 +269,15 @@ namespace MyProject.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostId"), 1L, 1);
 
                     b.Property<string>("Author")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PicturePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("PublishedDateTime")
@@ -294,7 +291,7 @@ namespace MyProject.DAL.Migrations
 
                     b.HasIndex("BlogId");
 
-                    b.ToTable("Post", "Identity");
+                    b.ToTable("Post");
                 });
 
             modelBuilder.Entity("MyProject.BL.Entities.User", b =>
@@ -360,9 +357,6 @@ namespace MyProject.DAL.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<int?>("UsernameChangeLimit")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -373,7 +367,7 @@ namespace MyProject.DAL.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.ToTable("AspNetUsers", "Identity");
+                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -441,7 +435,7 @@ namespace MyProject.DAL.Migrations
             modelBuilder.Entity("MyProject.BL.Entities.Post", b =>
                 {
                     b.HasOne("MyProject.BL.Entities.Blog", "Blog")
-                        .WithMany("Post")
+                        .WithMany("Posts")
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
@@ -451,7 +445,7 @@ namespace MyProject.DAL.Migrations
 
             modelBuilder.Entity("MyProject.BL.Entities.Blog", b =>
                 {
-                    b.Navigation("Post");
+                    b.Navigation("Posts");
                 });
 
             modelBuilder.Entity("MyProject.BL.Entities.Post", b =>

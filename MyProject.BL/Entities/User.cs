@@ -11,7 +11,7 @@ namespace MyProject.BL.Entities
 
         [Required]
         public string? LastName { get; set; }
-        public int? UsernameChangeLimit { get; set; } = 10;
+        
         public byte[]? ProfilePicture { get; set; }
     }
 }

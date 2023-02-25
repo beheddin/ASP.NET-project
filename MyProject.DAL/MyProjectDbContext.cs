@@ -23,7 +23,7 @@ namespace MyProject.DAL
         {
             base.OnModelCreating(builder);
 
-            builder.HasDefaultSchema("Identity");
+            //builder.HasDefaultSchema("Identity");
 
             builder.Entity<IdentityUser>(
                 entity => { entity.ToTable(name: "User"); }
@@ -48,13 +48,16 @@ namespace MyProject.DAL
                 );
 
             //19. add relationships config
-            builder.Entity<Blog>()
-                .HasMany(b => b.Post)
+            builder.Entity<Blog>(
+                //entity => { entity.ToTable("Blog"); }
+                    )   
+                .HasMany(b => b.Posts)
                 .WithOne(p => p.Blog)
                 .OnDelete(DeleteBehavior.SetNull)
                 .IsRequired();
 
             builder.Entity<Post>()
+
                 .HasMany(p => p.Comments)
                 .WithOne(c => c.Post)
                 .OnDelete(DeleteBehavior.SetNull)

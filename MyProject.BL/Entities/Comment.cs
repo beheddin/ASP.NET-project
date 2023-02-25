@@ -15,11 +15,11 @@ namespace MyProject.BL.Entities
         public string? Author { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime PublishedDateTime { get; set; }
 
-        [ForeignKey("PostId")]
+        //[ForeignKey("PostId")]
         public int PostId { get; set; }
-        public Post? Post { get; set; }
+        public Post? Post { get; set; } //reference navigation prop 
     }
 }

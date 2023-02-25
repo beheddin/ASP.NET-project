@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MyProject.BL.Entities.Blog>
+
+    <tbody>
+
+@foreach (var item in Model) {
+
+                
+                    <a asp-action="Details" asp-route-id="@item.BlogId">@Html.DisplayFor(modelItem => item.Title)</a>
+
+}
+    </tbody>
+

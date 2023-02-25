@@ -21,10 +21,27 @@ namespace MyProject.Web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        //24
+        /*[HttpGet]
+        public IActionResult MyBlogs()
         {
             return View();
-        }
+        }*/
+
+        //23
+        /*[HttpGet]
+        public IActionResult CreateBlog()
+        {
+            return View(new Blog());
+        }*/
+
+        //23
+        /*[HttpPost]
+        public IActionResult CreateBlog(Blog blog)
+        {
+            return RedirectToAction("Index");
+        }*/
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

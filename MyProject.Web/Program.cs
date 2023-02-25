@@ -8,7 +8,7 @@ using MyProject.DAL;
 //22. change the refernece from the 'User' in 'MyProject.Web.Model' to the 'User' in 'MyProject.BL.Entities'
 //using MyProject.Web.Models;   //22
 using MyProject.BL.Entities;
-
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +30,15 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddRazorPages();   //6
 
+//26. add Pictures to the proj
+builder.Services.AddSingleton<IFileProvider>(
+    new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Pictures"))
+    );
+
+
 var app = builder.Build();
+
+app.UseStaticFiles();   //26
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

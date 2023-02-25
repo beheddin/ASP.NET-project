@@ -1,0 +1,77 @@
+﻿@model MyProject.BL.Entities.Post
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create post</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        <!--26-->
+        <!--
+            <form asp-action="Create">
+        -->
+            <form asp-action="Create" asp-controller="Posts"  method="post" enctype="multipart/form-data">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <br/>
+
+            <!--26-->
+            <div class="form-group">
+                <div class="col-md-10">
+                    <p>Upload a picture</p> 
+                    <input type="file" name="file" />
+                </div> 
+            </div>
+            <br/>
+
+            <div class="form-group">
+                <!--
+                <label asp-for="Author" class="control-label"></label>
+                -->
+                <input asp-for="Author" class="form-control" hidden/>
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <!--
+                <label asp-for="PublishedDateTime" class="control-label"></label>
+                -->
+                <input asp-for="PublishedDateTime" class="form-control" hidden/>
+                <span asp-validation-for="PublishedDateTime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BlogId" class="control-label">Choose a blog</label>
+                <select asp-for="BlogId" class ="form-control" asp-items="ViewBag.BlogId">
+                </select>
+            </div>
+            <br/>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,5 +1,7 @@
 ﻿//15
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyProject.BL.Entities
 {
@@ -11,14 +13,12 @@ namespace MyProject.BL.Entities
 
         [Required]
         public string? Title { get; set; }
-        public string? Url { get; set; }
 
-        [Required]
         public string? Author { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime PublishedDateTime { get; set; }
-        public virtual List<Post>? Post { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime PublishedDateTime { get; set; } = DateTime.Now;
+        public virtual List<Post>? Posts { get; set; }
     }
 }
