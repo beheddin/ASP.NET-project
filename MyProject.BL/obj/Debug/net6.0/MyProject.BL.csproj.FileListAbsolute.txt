@@ -1,0 +1,14 @@
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\bin\Debug\net6.0\MyProject.BL.deps.json
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\bin\Debug\net6.0\MyProject.BL.runtimeconfig.json
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\bin\Debug\net6.0\MyProject.BL.dll
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\bin\Debug\net6.0\MyProject.BL.pdb
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\obj\Debug\net6.0\MyProject.BL.csproj.AssemblyReference.cache
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\obj\Debug\net6.0\MyProject.BL.GeneratedMSBuildEditorConfig.editorconfig
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\obj\Debug\net6.0\MyProject.BL.AssemblyInfoInputs.cache
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\obj\Debug\net6.0\MyProject.BL.AssemblyInfo.cs
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\obj\Debug\net6.0\MyProject.BL.csproj.CoreCompileInputs.cache
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\obj\Debug\net6.0\MyProject.BL.dll
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\obj\Debug\net6.0\refint\MyProject.BL.dll
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\obj\Debug\net6.0\MyProject.BL.pdb
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\obj\Debug\net6.0\MyProject.BL.genruntimeconfig.cache
+D:\CS\IRM 2\C#\Projets\MyProject\MyProject.BL\obj\Debug\net6.0\ref\MyProject.BL.dll
